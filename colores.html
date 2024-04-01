@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Selector</title>
+</head>
+<body>
+    <h1>Theme Selector</h1>
+    <p>Select a theme:</p>
+    <select id="theme" onchange="changeTheme()">
+        <option value="white">White</option>
+        <option value="black">Black</option>
+        <option value="purple">Purple</option>
+        <option value="yellow">Yellow</option>
+        <option value="psychedelic">Psychedelic</option>
+    </select>
+
+    <script>
+        function changeTheme() {
+            var choice = document.getElementById("theme").value;
+            
+            // AÑADIR DECLARACIÓN SWITCH
+            //Cada caso define la accion que se cumple, dependiendo lo seleccionado el color que se ve
+            switch(choice) {
+                case "white":
+                    update("white", "black");
+                    break;
+                case "black":
+                    update("black", "white");
+                    break;
+                case "purple":
+                    update("purple", "white");
+                    break;
+                case "yellow":
+                    update("yellow", "black");
+                    break;
+                case "psychedelic":
+                    update("lime", "purple");
+                    break;
+                default:
+                    console.log("Theme not recognized");
+            }
+        }
+
+        // Función de ejemplo para actualizar el tema
+        function update(bgColor, textColor) {
+            document.body.style.backgroundColor = bgColor;
+            document.body.style.color = textColor;
+        }
+    </script>
+</body>
+</html>

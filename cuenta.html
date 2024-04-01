@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+</head>
+<body>
+    <h1>Countdown</h1>
+    <div class="output"></div>
+
+    <script>
+        const output = document.querySelector('.output');
+        //For para diferenciar el texto que queremso que aparezca y cuando, determinar que cuando salga 
+        //10 se empiece la cuenta y cuando salga 0, termine
+        for (let i = 10; i >= 0; i--) {
+            const para = document.createElement('p');
+            output.appendChild(para);
+
+            if (i === 10) {
+                para.textContent = "Countdown 10";
+            } else if (i === 0) {
+                para.textContent = "Blast off!";
+            } else {
+                para.textContent = i;
+            }
+        }
+    </script>
+</body>
+</html>

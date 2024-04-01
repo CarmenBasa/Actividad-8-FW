@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Draw Rectangle</title>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <canvas id="canvas" width="400" height="300"></canvas>
+
+  </body>
+  <script>
+    //Constante para tener el canvas y su elemento
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    //Funcion para que se dibuje el rectangulo en el canvas anterior
+    function drawRectangle(x, y, width, height, color) {
+      //Limpiarlo
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      //Darle un releno
+      ctx.fillStyle = color;
+      
+      //Dibujar rectangulo
+      ctx.fillRect(x, y, width, height);
+    }
+
+    //Como se dibujara
+    drawRectangle(50, 50, 100, 80, 'red');
+  </script>
+
+</html>

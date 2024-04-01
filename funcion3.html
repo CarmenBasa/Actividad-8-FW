@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Choose Random Name</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <section class="preview">
+      <p id="para"></p>
+    </section>
+
+  </body>
+  <script>
+
+    const names = ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Frank'];
+
+    //Funcion para un numero aleatorio entre el limite
+    function random(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    //Funcion para elegir un nombre
+    function chooseName(nameArray) {
+      const randomIndex = random(0, nameArray.length - 1);
+      return nameArray[randomIndex];
+    }
+
+    //Obtener referencia al párrafo
+    const para = document.getElementById('para');
+
+    //Imprimir el nombre aleatorio en el párrafo
+    para.textContent = chooseName(names);
+  </script>
+
+</html>

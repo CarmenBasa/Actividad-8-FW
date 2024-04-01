@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Choose Random Name</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <section class="preview">
+      <p id="para"></p>
+    </section>
+
+  </body>
+  <script>
+    const names = ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Frank'];
+
+    //Funcion para elegir los nombres 
+    function chooseName() {
+      //Constante que genera un indice aleatorio
+      const randomIndex = Math.floor(Math.random() * names.length);
+      //Obtiene un nombre usando el indice
+      const randomName = names[randomIndex];
+      // Devuelve ambas cosas, nombre e indice
+      return { name: randomName, index: randomIndex };
+    }
+
+    // Ejecutar la función 
+    const { name, index } = chooseName();
+    const para = document.getElementById('para');
+    para.textContent = `Nombre: ${name}, Índice: ${index}`;
+  </script>
+
+</html>

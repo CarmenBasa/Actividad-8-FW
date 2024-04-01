@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calendar App</title>
+</head>
+<body>
+    <h1 id="calendarMonth">Month</h1>
+    <select id="months" onchange="createCalendar()">
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="September">September</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+    </select>
+
+    <script>
+        function createCalendar() {
+            var choice = document.getElementById("months").value;
+            var days;
+
+            // AÑADIR CONDICIONAL AQUÍ
+            //Cada if es para marcar la cantidad de dia de los meses
+            if (choice === "January" || choice === "March" || choice === "May" || choice === "July" || choice === "August" || choice === "October" || choice === "December") {
+                days = 31;
+            } else if (choice === "April" || choice === "June" || choice === "September" || choice === "November") {
+                days = 30;
+            } else {
+                days = 28; // Defaulting to February
+            }
+
+            document.getElementById("calendarMonth").textContent = choice + " - " + days + " days";
+        }
+    </script>
+</body>
+</html>

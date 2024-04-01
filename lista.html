@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Invitados</title>
+</head>
+<body>
+
+<h2>Lista de Invitados Admitidos</h2>
+<p id="admitted"></p>
+
+<h2>Lista de Invitados Rechazados</h2>
+<p id="refused"></p>
+
+<script>
+  // Arreglo de nombres
+  const people = ['Alice', 'Bob', 'Charlie', 'Phil', 'David', 'Eve', 'Lola', 'Frank'];
+
+  // Constantes para ver la lista de invitados admitidos y rechazados
+  //For para identificar persona y determinar en que apartado ded la lista van
+  const admitted = document.getElementById('admitted');
+  const refused = document.getElementById('refused');
+  for (let i = 0; i < people.length; i++) {
+    if (people[i] === 'Phil' || people[i] === 'Lola') {
+      refused.textContent += people[i] + ', ';
+    } else {
+      admitted.textContent += people[i] + ', ';
+    }
+  }
+
+  // Eliminar la coma y el espacio extra al final de cada lista
+  admitted.textContent = admitted.textContent.slice(0, -2);
+  refused.textContent = refused.textContent.slice(0, -2);
+</script>
+
+</body>
+</html>
